@@ -1,6 +1,7 @@
 package com.example.lostandfoundapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-
-import com.example.lostandfoundapp.data.Item;
 
 public class CreateActivity extends AppCompatActivity {
 
@@ -40,8 +39,10 @@ public class CreateActivity extends AppCompatActivity {
                 String descriptionValue = description.getText().toString();
                 String dateValue = date.getText().toString();
                 String locationValue = location.getText().toString();
-                Item item = new Item(0, lostorfound, nameValue, phoneValue, descriptionValue, dateValue, locationValue);
-                i.putExtra("create", item);
+                String[] values = {nameValue, phoneValue, descriptionValue, dateValue, locationValue};
+                // Item item = new Item(0, lostorfound, nameValue, phoneValue, descriptionValue, dateValue, locationValue);
+                i.putExtra("bool", lostorfound);
+                i.putExtra("create", values);
                 setResult(RESULT_OK, i);
                 finish();
             }

@@ -37,6 +37,7 @@ public class ItemActivity extends AppCompatActivity {
                 Intent i = new Intent();
                 i.putExtra("pos", position);
                 setResult(RESULT_OK, i);
+                finish();
             }
 
             @Override
