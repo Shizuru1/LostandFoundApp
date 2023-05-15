@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent j = new Intent(MainActivity.this, ItemActivity.class);
                 if (items.getValue() != null) {
                     names.clear();
+                    names.add("Items");
                     for (int k = 0; k < items.getValue().size(); k++) {
                         names.add(items.getValue().get(k).getName());
                     }

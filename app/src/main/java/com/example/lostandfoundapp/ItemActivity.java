@@ -31,11 +31,13 @@ public class ItemActivity extends AppCompatActivity {
         ArrayList<String> names = intent.getStringArrayListExtra("names");
         ArrayAdapter<String> adapter = new ArrayAdapter<>(ItemActivity.this, android.R.layout.simple_spinner_dropdown_item, names);
         spinner.setAdapter(adapter);
+        int initPosition = spinner.getSelectedItemPosition();
+        spinner.setSelection(initPosition, false);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent();
-                i.putExtra("pos", position);
+                i.putExtra("pos", position - 1);
                 setResult(RESULT_OK, i);
                 finish();
             }
