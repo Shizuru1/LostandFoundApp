@@ -19,6 +19,7 @@ import java.util.List;
 
 public class ItemActivity extends AppCompatActivity {
 
+    // Initialize variables
     Spinner spinner;
 
     @Override
@@ -26,10 +27,13 @@ public class ItemActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item);
 
+        // Set variables
         spinner = findViewById(R.id.spinner);
         Intent intent = getIntent();
         ArrayList<String> names = intent.getStringArrayListExtra("names");
         ArrayAdapter<String> adapter = new ArrayAdapter<>(ItemActivity.this, android.R.layout.simple_spinner_dropdown_item, names);
+
+        // Initialize spinner
         spinner.setAdapter(adapter);
         int initPosition = spinner.getSelectedItemPosition();
         spinner.setSelection(initPosition, false);

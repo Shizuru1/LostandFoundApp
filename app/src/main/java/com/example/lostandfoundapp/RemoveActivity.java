@@ -12,6 +12,7 @@ import com.example.lostandfoundapp.data.Item;
 
 public class RemoveActivity extends AppCompatActivity {
 
+    // Initialize variables
     TextView text;
     Button removeButton;
 
@@ -20,6 +21,7 @@ public class RemoveActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remove);
 
+        // Set variables
         text = findViewById(R.id.textView8);
         removeButton = findViewById(R.id.button3);
         Intent intent = getIntent();
@@ -29,6 +31,7 @@ public class RemoveActivity extends AppCompatActivity {
         String textValue = lostorfound + "\n" + item.getName() + "\n" + item.getPhone() + "\n" + item.getDescription() + "\n" + item.getDate() + "\n" + item.getLocation();
         text.setText(textValue);
 
+        // pass data back to Main Activity for deletion
         removeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

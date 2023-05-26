@@ -9,6 +9,9 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.libraries.places.api.model.Place;
+
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -42,7 +45,7 @@ public abstract class ItemRoomDatabase extends RoomDatabase {
             databaseWriterExecutor.execute(() -> {
                 ItemDAO itemDAO = INSTANCE.itemDAO();
 
-                Item item = new Item(0, false, "Name", "0400000000", "Description", "1/1/2001", "Location");
+                Item item = new Item(0, false, "Name", "0400000000", "Description", "1/1/2001", "Place", 0, 0);
                 itemDAO.insert(item);
             });
         }
